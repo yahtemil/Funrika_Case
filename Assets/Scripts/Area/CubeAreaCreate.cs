@@ -80,7 +80,16 @@ public class CubeAreaCreate : MonoBehaviour
         int letterCount = PlayerPrefs.GetInt("LetterCount", 0);
         for (int i = 0; i < counterLimit; i++)
         {
-            SelectList.Add(LettersList.Find(x => x.LetterName == letters[letterCount]));
+            Letters _letters = LettersList.Find(x => x.LetterName == letters[letterCount]);
+            if (_letters != null)
+            {
+                SelectList.Add(_letters);
+            }
+            else
+            {
+                SelectList.Add(LettersList.Find(x => x.LetterName == "C"));
+            }
+            
             letterCount++;
             if (letterCount >= letters.Count && letterCount != 0)
             {
