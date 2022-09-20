@@ -80,7 +80,16 @@ public class CubeAreaCreate : MonoBehaviour
         int letterCount = PlayerPrefs.GetInt("LetterCount", 0);
         for (int i = 0; i < counterLimit; i++)
         {
-            SelectList.Add(LettersList.Find(x => x.LetterName == letters[letterCount]));
+            Letters _letters = LettersList.Find(x => x.LetterName == letters[letterCount]);
+            if (_letters != null)
+            {
+                SelectList.Add(_letters);
+            }
+            else
+            {
+                SelectList.Add(LettersList.Find(x => x.LetterName == "C"));
+            }
+            
             letterCount++;
             if (letterCount >= letters.Count && letterCount != 0)
             {
@@ -173,18 +182,12 @@ public class CubeAreaCreate : MonoBehaviour
 
     public ListCube GetListCube()
     {
-        for (int i = 0; i < instance.AllSelectCubeList.Count; i++)
+        for (int i = 0; i < AllListCube.Count; i++)
         {
-            for (int j = 0; j < instance.AllSelectCubeList[i].spritePuzzleList.Count; j++)
+            ListCube listCube = instance.AllListCube[i];
+            if (listCube.Placed == false)
             {
-                for (int k = 0; k < instance.AllSelectCubeList[i].spritePuzzleList[j].AllListCubes.Count; k++)
-                {
-                    ListCube listCube = instance.AllSelectCubeList[i].spritePuzzleList[j].AllListCubes[k];
-                    if (listCube.Placed == false)
-                    {
-                        return listCube;
-                    }
-                }
+                return listCube;
             }
         }
         return null;
