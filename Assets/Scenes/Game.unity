@@ -3111,6 +3111,7 @@ MonoBehaviour:
   - {fileID: 410180477}
   - {fileID: 1793516147}
   - {fileID: 1365821005}
+  readWrite: {fileID: 0}
   letters: []
   LettersList:
   - {fileID: 11400000, guid: fb73a07b73f27be4da0735d17b067b29, type: 2}
@@ -3138,6 +3139,7 @@ MonoBehaviour:
   - {r: 0.5294118, g: 0.53212816, b: 0.7529412, a: 1}
   - {r: 0.5294118, g: 0.6630207, b: 0.7529412, a: 1}
   - {r: 0.5294118, g: 0.7529412, b: 0.74630725, a: 1}
+  AllListCube: []
   DealMaxPosX: 1
   DealMinPosZ: -13
   DealMinPosZReserve: 0
@@ -6048,7 +6050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6.85, y: 30, z: -15}
+  m_LocalPosition: {x: 6.5, y: 30, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 856334840}
@@ -9888,6 +9890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickCounter: 0
+  active: 0
 --- !u!114 &1688042586
 MonoBehaviour:
   m_ObjectHideFlags: 0
